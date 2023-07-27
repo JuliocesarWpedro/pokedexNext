@@ -1,0 +1,35 @@
+.homePrincipal {
+  background: linear-gradient(180deg, #EE8328 0%, #E14318 100%);
+  height: 840px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pokeballLeft{
+  left: -10px;
+  position: absolute;
+  transform: scaleX(-1);
+}
+
+.pokeballRight{
+  position: absolute;
+  transform: scaleX(-1);
+  right: 0;
+}
+
+.waves {
+  display: flex;
+  position: relative;
+  bottom: 0;
+  align-items: end;
+  justify-content: end;
+}
+
+@media (max-width: 1200px){
+  .homePrincipal{
+      padding: 0 32px;
+  }
+  .pokeballLeft , .pokeballRight{
+      display: none;
+  }
+}

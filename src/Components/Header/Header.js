@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/header.module.css';
+import styles from '../Header/header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,7 +18,7 @@ const header = () => {
         <ul>
           <li>
             <Link href="https://br.linkedin.com/">
-            <Image
+              <Image
                 src="/images/logo-linkedin.png"
                 width="32"
                 height="32"
@@ -38,7 +38,7 @@ const header = () => {
           </li>
           <li>
             <Link href="https://web.telegram.org/">
-            <Image
+              <Image
                 src="/images/telegram.png"
                 width="32"
                 height="32"

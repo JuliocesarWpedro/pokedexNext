@@ -9,8 +9,9 @@ li {
 }
 
 .mainContainer {
-  padding:  24px 352px;
+  padding:  24px 152px;
   margin: 0 auto;
+  max-width: 1216px;
 }
 
 @media (max-width: 724px) {
