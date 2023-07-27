@@ -1,0 +1,50 @@
+.containerPokemon {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: 1217px;
+  width: 100%;
+}
+
+.textPokemon {
+  width: 45%;
+}
+
+.divisor {
+  width: 10%;
+}
+
+.imagePokemon {
+  display: block;
+  width: 45%;
+  max-width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .containerPokemon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .textPokemon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .divisor {
+    width: 100%;
+  }
+  
+  .imagePokemon {
+    max-width: 100%;
+  }
+  
+.divisor img {
+  transform: rotate(90deg);
+}
+}

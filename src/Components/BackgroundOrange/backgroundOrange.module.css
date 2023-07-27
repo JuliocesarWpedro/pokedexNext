@@ -18,11 +18,9 @@
 }
 
 .waves {
-  display: flex;
-  position: relative;
-  bottom: 0;
-  align-items: end;
-  justify-content: end;
+  position: absolute;
+  bottom: -250px;
+  width: 100%;
 }
 
 @media (max-width: 1200px){
@@ -31,5 +29,23 @@
   }
   .pokeballLeft , .pokeballRight{
       display: none;
+  }
+}
+
+@media (max-width: 1100px){
+  .homePrincipal {
+    height: 1294px
+  }
+  .waves {
+    width: 100%;
+    bottom: -727px;
+  }
+
+}
+
+@media (max-width: 700px){
+  .waves {
+    width: 100%;
+    bottom: -727px;
   }
 }
