@@ -1,0 +1,11 @@
+.header {
+  background: linear-gradient(to right,#EE8328, #E14318);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul{
+  display: flex;
+  gap: 16px;
+}

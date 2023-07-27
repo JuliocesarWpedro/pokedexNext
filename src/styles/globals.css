@@ -1,5 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
 .mainContainer {
   padding:  24px 352px;
   margin: 0 auto;
-  font-size: 1rem;
+}
+
+@media (max-width: 724px) {
+  .mainContainer {
+    padding:  24px 16px;
+    margin: 0 auto;
+  }
 }

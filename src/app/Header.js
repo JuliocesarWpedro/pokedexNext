@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const header = () => {
   return (
-    <header className="mainContainer">
+    <header className={`${styles.header} mainContainer`}>
       <Link href="/">
         <Image
           src="/images/logo-pokemon.png"
@@ -14,8 +14,42 @@ const header = () => {
           alt="Imagem logo"
         />
       </Link>
+      <nav className={styles.navbar}>
+        <ul>
+          <li>
+            <Link href="https://br.linkedin.com/">
+            <Image
+                src="/images/logo-linkedin.png"
+                width="32"
+                height="32"
+                alt="Imagem logo"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link href="https://github.com/">
+              <Image
+                src="/images/github.png"
+                width="32"
+                height="32"
+                alt="Imagem logo"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link href="https://web.telegram.org/">
+            <Image
+                src="/images/telegram.png"
+                width="32"
+                height="32"
+                alt="Imagem logo"
+              />
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
 
-export default header
+export default header;
