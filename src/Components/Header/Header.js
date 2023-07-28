@@ -6,14 +6,16 @@ import Link from 'next/link';
 const header = () => {
   return (
     <header className={`${styles.header} mainContainer`}>
-      <Link href="/">
-        <Image
-          src="/images/logo-pokemon.png"
-          width="153"
-          height="56"
-          alt="Imagem logo"
-        />
-      </Link>
+      <div>
+        <Link className={styles.logo} href="/">
+          <Image
+            src="/images/logo-pokemon.png"
+            width="153"
+            height="56"
+            alt="Imagem logo"
+          />
+        </Link>
+      </div>
       <nav className={styles.navbar}>
         <ul>
           <li>

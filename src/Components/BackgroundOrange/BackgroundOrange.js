@@ -20,13 +20,6 @@ const BackgroundOrange = ({ children }) => {
         alt="Pokeball"
       />
       {children}
-      <Image
-        className={styles.waves}
-        src="/images/waves.png"
-        width="1920"
-        height="120"
-        alt="Waves"
-      />
     </div>
   );
 };

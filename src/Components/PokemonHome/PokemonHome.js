@@ -7,7 +7,7 @@ const PokemonHome = () => {
     <div className={`${styles.containerPokemon} mainContainer`}>
       <div className={styles.textPokemon}>
         <p className={styles.number}>#006</p>
-        <div>
+        <div className={styles.buttonCarac}>
           <button>Fire</button>
           <button>Flying</button>
         </div>

@@ -1,6 +1,6 @@
 .homePrincipal {
   background: linear-gradient(180deg, #EE8328 0%, #E14318 100%);
-  height: 840px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,35 +17,15 @@
   right: 0;
 }
 
-.waves {
-  position: absolute;
-  bottom: -250px;
-  width: 100%;
-}
-
 @media (max-width: 1200px){
   .homePrincipal{
       padding: 0 32px;
   }
-  .pokeballLeft , .pokeballRight{
-      display: none;
-  }
 }
 
-@media (max-width: 1100px){
-  .homePrincipal {
-    height: 1294px
-  }
-  .waves {
-    width: 100%;
-    bottom: -727px;
-  }
-
-}
-
-@media (max-width: 700px){
-  .waves {
-    width: 100%;
-    bottom: -727px;
+@media (max-width: 800px){
+  .pokeballLeft,
+  .pokeballRight {
+    display: none;
   }
 }
