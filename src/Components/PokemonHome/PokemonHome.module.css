@@ -1,28 +1,20 @@
 .containerPokemon {
   display: flex;
   align-items: center;
-  text-align: center;
-  max-width: 1217px;
-  width: 100%;
+  max-width: 1250px;
   height: 100vh;
-  padding: 0;
-  margin: 0;
   margin-top: calc(27px + 72px);
 }
 
 .textPokemon {
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-.divisor {
-  width: 10%;
-}
-
 .imagePokemon {
   display: block;
-  width: 45%;
+  width: 50%;
 }
 
 .buttonCarac button {
@@ -46,14 +38,13 @@ font-family: Montserrat;
 }
 
 .textFirst {
-  font-family: Montserrat;
-font-size: 64px;
-font-weight: 700;
-line-height: 86px;
-letter-spacing: 0em;
-text-align: left;
-align-items: left;
-color: #ffffff;
+  font-family: "Montserrat",sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 86px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
 }
 
 .textSecundary {
@@ -69,20 +60,24 @@ color: #ffffff;
 }
 
 .buttonDetails {
-padding: 12px 0px 12px 0px;
-border-radius: 8px;
-border: 2px;
-gap: 8px;
-margin-top: 20px;
-background: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-weight: 700;
-line-height: 24px;
-letter-spacing: 0em;
-color: #e14318;
-display: inline-block;
-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0px;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 24px;
+  color: #E14318;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 @media (max-width: 1200px) {

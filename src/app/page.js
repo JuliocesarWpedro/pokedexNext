@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div>
       <BackgroundOrange>
-        <PokemonHome />
+        <PokemonHome/>
       </BackgroundOrange>
     </div>
   );

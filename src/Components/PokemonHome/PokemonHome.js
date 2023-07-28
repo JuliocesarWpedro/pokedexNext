@@ -4,7 +4,7 @@ import styles from '../PokemonHome/PokemonHome.module.css';
 
 const PokemonHome = () => {
   return (
-    <div className={`${styles.containerPokemon} mainContainer`}>
+    <div className={`mainContainer ${styles.containerPokemon}`}>
       <div className={styles.textPokemon}>
         <p className={styles.number}>#006</p>
         <div className={styles.buttonCarac}>
