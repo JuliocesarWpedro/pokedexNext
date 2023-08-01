@@ -4,7 +4,7 @@ import styles from './backgroundOrange.module.css';
 
 const BackgroundOrange = ({ children }) => {
   return (
-    <div className={`${styles.homePrincipal} mainContainer`}>
+    <div className={`${styles.homePrincipal}`}>
       <Image
         className={styles.pokeballLeft}
         src="/images/pokeball.png"
