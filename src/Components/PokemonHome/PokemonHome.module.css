@@ -1,9 +1,10 @@
 .containerPokemon {
   display: flex;
   align-items: center;
-  max-width: 1250px;
+  justify-content: center;
+  max-width: 1217px;
   height: 100vh;
-  margin-top: calc(27px + 72px);
+  z-index: 10;
 }
 
 .textPokemon {
@@ -22,8 +23,14 @@
 }
 
 .imagePokemon {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 45%;
+}
+
+.imagePokemon img {
+  display: block;
+  width: 100%;
 }
 
 .buttonCarac button {
@@ -90,7 +97,6 @@ color: #ffffff;
 }
 
 @media (max-width: 1000px) {
-
   .divisor {
     width: 100%;
     flex-direction: row;
@@ -101,12 +107,12 @@ color: #ffffff;
     height: 48px;
   }
 
-.divisor img:first-child {
+ .divisor img:first-child {
   rotate: 90deg;
   width: 1px;
   height: 130px;
   margin-right: 34px;
-}
+ }
 
 .divisor img:last-child {
   rotate: 90deg;

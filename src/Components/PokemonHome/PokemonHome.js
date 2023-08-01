@@ -4,7 +4,7 @@ import styles from '../PokemonHome/PokemonHome.module.css';
 
 const PokemonHome = () => {
   return (
-    <div className={`mainContainer ${styles.containerPokemon}`}>
+    <div className={`${styles.containerPokemon}`}>
       <div className={styles.textPokemon}>
         <p className={styles.number}>#006</p>
         <div className={styles.buttonCarac}>
@@ -27,13 +27,13 @@ const PokemonHome = () => {
           height="212"
           alt="Imagem Pokemon"
         />
-         <Image
+        <Image
           src="/images/divider-fire.png"
           width="56"
           height="56"
           alt="Divisor"
         />
-         <Image
+        <Image
           src="/images/Rectangle2.png"
           width="1"
           height="212"

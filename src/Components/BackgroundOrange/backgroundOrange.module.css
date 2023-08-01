@@ -17,10 +17,11 @@
   right: 0;
 }
 
+
 @media (max-width: 1200px){
   .homePrincipal{
       padding: 0 32px;
-      height: 100%;
+      height: 1300px;
   }
 }
 
