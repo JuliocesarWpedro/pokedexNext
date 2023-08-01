@@ -6,8 +6,8 @@ import Link from 'next/link';
 const header = () => {
   return (
     <header className={`${styles.header} mainContainer`}>
-      <div>
-        <Link className={styles.logo} href="/">
+      <div className={`${styles.logo}`}>
+        <Link className={`${styles.logoLink}`} href="/">
           <Image
             src="/images/logo-pokemon.png"
             width="153"
@@ -16,7 +16,7 @@ const header = () => {
           />
         </Link>
       </div>
-      <nav className={styles.navbar}>
+      <nav className={`${styles.navbar}`}>
         <ul>
           <li>
             <Link href="https://br.linkedin.com/">

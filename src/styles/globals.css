@@ -15,14 +15,12 @@ li {
 .mainContainer {
   padding:  24px 352px;
   margin: 0 auto;
-  height: 100vh;
 }
 
 @media (max-width: 1400px) {
   .mainContainer {
     padding:  0px 150px;
     margin: 0 auto;
-    height: 100vh;
   }
 }
 

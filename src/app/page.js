@@ -4,11 +4,11 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div>
+    <>
       <BackgroundOrange>
         <PokemonHome/>
       </BackgroundOrange>
-    </div>
+    </>
   );
 };
 

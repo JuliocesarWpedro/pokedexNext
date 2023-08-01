@@ -22,9 +22,21 @@ const PokemonHome = () => {
       </div>
       <div className={`${styles.divisor}`}>
         <Image
-          src="/images/fire-divider.png"
+          src="/images/Rectangle.png"
+          width="1"
+          height="212"
+          alt="Imagem Pokemon"
+        />
+         <Image
+          src="/images/divider-fire.png"
           width="56"
-          height="528"
+          height="56"
+          alt="Divisor"
+        />
+         <Image
+          src="/images/Rectangle2.png"
+          width="1"
+          height="212"
           alt="Imagem Pokemon"
         />
       </div>
