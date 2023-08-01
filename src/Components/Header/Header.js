@@ -6,8 +6,8 @@ import Link from 'next/link';
 const header = () => {
   return (
     <header className={`${styles.header} mainContainer`}>
-      <div className={`${styles.logo}`}>
-        <Link className={`${styles.logoLink}`} href="/">
+      <div className={`${styles.logoContainer}`}>
+        <Link className={`${styles.logo}`} href="/">
           <Image
             src="/images/logo-pokemon.png"
             width="153"
