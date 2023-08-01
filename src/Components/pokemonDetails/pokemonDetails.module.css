@@ -1,0 +1,8 @@
+.containerDetail {
+  position: fixed;
+  max-width: 948px;
+  max-height: 352px;
+  z-index: 400;
+  padding: 20px;
+  display: flex;
+}
