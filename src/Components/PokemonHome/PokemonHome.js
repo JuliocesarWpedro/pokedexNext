@@ -15,7 +15,7 @@ const PokemonHome = () => {
 
   return (
     <>
-      {details && <PokemonDetails />}
+      {details && <PokemonDetails setDetails={setDetails} />}
       <div className={`${styles.containerPokemon}`}>
         <div className={styles.textPokemon}>
           <p className={styles.number}>#006</p>

@@ -1,8 +1,206 @@
-.containerDetail {
+.backgroundFound {
+  height: 140%;
+  width: 100vw;
+  background: #00000080;
+  z-index: 1000;
   position: fixed;
-  max-width: 948px;
-  max-height: 352px;
-  z-index: 400;
+
+}
+
+.containerDetail {
+  background: rgb(0, 0, 0, 0.5);
+border-radius: 10px;
+  width: 948px;
+  height: 352px;
+  position: fixed;
+  z-index: 1001;
+  max-width: 949px;
+  max-height: 353px;
   padding: 20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerFirst {
+  color: white;
+  z-index: 2000 !important;
+  position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-right: 40px;
+}
+
+.buttons {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.buttons button {
+  font-family: Montserrat;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+color: white;
+}
+
+.buttons button:nth-child(1) {
+  margin-right: 8px;
+}
+
+
+.caracteristicas {
+  display: flex;
+  gap: 24px;
+}
+
+.peso, .altura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.peso div, .altura div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.peso p,
+.altura p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.peso div p,
+.altura div p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.numberid {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+}
+
+.titlePokemon {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 43px;
+  letter-spacing: 0em;
+}
+
+.imagePokemon {
+  position: absolute;
+  top: -268px;
+}
+
+
+.containerSecond {
+  margin-right: 40px;
+  filter: initial;
+  z-index: 2000 !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.containerSecond img {
+  display: block;
+}
+
+.fecharIcon {
+  cursor: pointer;
+  z-index: 1100;
+  top: 27.75px;
+  right: 27.75px;
+  position: absolute;
+}
+
+.containerThree {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.containerThree h2 {
+  font-family: Montserrat;
+font-size: 32px;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: 0em;
+color: #ffffff;
+margin-bottom: 16px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stats div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  align-content: center;
+}
+
+.stats div p {
+  width: 70px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+color: #ffffff;  
+}
+
+.stats div span {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;  
+}
+
+.stats div .progressStats {
+  position: relative;
+content: '';
+display: block;
+width: 304px;
+height: 8px;
+background: #555555;
+}
+
+.progessStatsGreen {
+  position: absolute;
+  top: 0;
+  content: '';
+  display: block;
+  width: 304px;
+  height: 8px;
+  background: #1CD80E;
 }
