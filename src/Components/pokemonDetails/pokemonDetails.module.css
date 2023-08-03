@@ -195,12 +195,16 @@ height: 8px;
 background: #555555;
 }
 
-.progessStatsGreen {
+.progessStatsGreenHP,
+.progessStatsGreenAtk,
+.progessStatsGreenDf,
+.progessStatsGreenSpAtk,
+.progessStatsGreenSpDef,
+.progessStatsGreenSpeed {
   position: absolute;
   top: 0;
   content: '';
   display: block;
-  width: 304px;
   height: 8px;
   background: #1CD80E;
 }

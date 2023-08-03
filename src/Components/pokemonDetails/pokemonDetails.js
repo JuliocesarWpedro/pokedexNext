@@ -3,6 +3,39 @@ import styles from '../pokemonDetails/pokemonDetails.module.css';
 import Image from 'next/image';
 
 const pokemonDetails = ({ setDetails }) => {
+  const numberHp = 78;
+  const numberAtk = 84;
+  const numberDf = 78;
+  const numberSpAtk = 109;
+  const numberSpDef = 85;
+  const numberSpeed = 100;
+
+  let numeroHP = Math.round((304 * numberHp) / 100);
+  let numeroAtk = Math.round((304 * numberAtk) / 100);
+  let numeroDf = Math.round((304 * numberDf) / 100);
+  let numeroSpAtk = Math.round((304 * numberSpAtk) / 100);
+  let numeroSpDef = Math.round((304 * numberSpDef) / 100);
+  let numeroSpeed = Math.round((304 * numberSpeed) / 100);
+
+  if (numberHp >= 100) {
+    numeroHP = 304;
+  }
+  if (numberAtk >= 100) {
+    numeroAtk = 304;
+  }
+  if (numberDf >= 100) {
+    numeroDf = 304;
+  }
+  if (numberSpAtk >= 100) {
+    numeroSpAtk = 304;
+  }
+  if (numberSpDef >= 100) {
+    numeroSpDef = 304;
+  }
+  if (numberSpeed >= 100) {
+    numeroSpeed = 304;
+  }
+
   function fecharicon() {
     setDetails(false);
   }
@@ -84,44 +117,62 @@ const pokemonDetails = ({ setDetails }) => {
           <div className={`${styles.stats}`}>
             <div>
               <p>HP</p>
-              <span>78</span>
+              <span>{numberHp}</span>
               <div className={`${styles.progressStats}`}>
-              <div className={`${styles.progessStatsGreen}`}></div>
+                <div
+                  style={{ width: `${numeroHP}px` }}
+                  className={`${styles.progessStatsGreenHP}`}
+                ></div>
               </div>
             </div>
             <div>
               <p>Attack</p>
-              <span>84</span>
+              <span>{numberAtk}</span>
               <div className={`${styles.progressStats}`}>
-              <div className={`${styles.progessStatsGreen}`}></div>
+                <div
+                  style={{ width: `${numeroAtk}px` }}
+                  className={`${styles.progessStatsGreenAtk}`}
+                ></div>
               </div>
             </div>
             <div>
               <p>Defense</p>
-              <span>78</span>
+              <span>{numberDf}</span>
               <div className={`${styles.progressStats}`}>
-              <div className={`${styles.progessStatsGreen}`}></div>
+                <div
+                  style={{ width: `${numeroDf}px` }}
+                  className={`${styles.progessStatsGreenDf}`}
+                ></div>
               </div>
             </div>
             <div>
               <p>Sp. Atk</p>
-              <span>109</span>
+              <span>{numberSpAtk}</span>
               <div className={`${styles.progressStats}`}>
-              <div className={`${styles.progessStatsGreen}`}></div>
+                <div
+                  style={{ width: `${numeroSpAtk}px` }}
+                  className={`${styles.progessStatsGreenSpAtk}`}
+                ></div>
               </div>
             </div>
             <div>
               <p>Sp. Def</p>
-              <span>85</span>
+              <span>{numberSpDef}</span>
               <div className={`${styles.progressStats}`}>
-              <div className={`${styles.progessStatsGreen}`}></div>
+                <div
+                  style={{ width: `${numeroSpDef}px` }}
+                  className={`${styles.progessStatsGreenSpDef}`}
+                ></div>
               </div>
             </div>
             <div>
               <p>Speed</p>
-              <span>100</span>
+              <span>{numberSpeed}</span>
               <div className={`${styles.progressStats}`}>
-              <div className={`${styles.progessStatsGreen}`}></div>
+                <div
+                  style={{ width: `${numeroSpeed}px` }}
+                  className={`${styles.progessStatsGreenSpeed}`}
+                ></div>
               </div>
             </div>
           </div>
