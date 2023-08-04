@@ -15,9 +15,13 @@ const PokemonDetails = ({ setDetails }) => {
 
   return (
     <>
+    
       <div
         onClick={() => setDetails(false)}
         className={`${styles.backgroundFound}`}
+      />
+      <div
+        className={`${styles.containerDetailblur}`}
       />
       <div className={`${styles.containerDetail}`}>
         <Image
