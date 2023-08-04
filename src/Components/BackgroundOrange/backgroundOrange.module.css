@@ -1,16 +1,16 @@
-.homePrincipal {
+  .homePrincipal {
   background: linear-gradient(180deg, #EE8328 0%, #E14318 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.pokeballLeft{
+  .pokeballLeft{
   left: -10px;
   position: absolute;
   transform: scaleX(-1);
 }
 
-.pokeballRight{
+ .pokeballRight{
   position: absolute;
   transform: scaleX(-1);
   right: 0;
@@ -20,7 +20,7 @@
 @media (max-width: 1200px){
   .homePrincipal{
       padding: 0 32px;
-      height: 1300px;
+      height: 1000px;
   }
 }
 

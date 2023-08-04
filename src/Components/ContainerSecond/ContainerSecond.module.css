@@ -1,0 +1,36 @@
+.containerSecond {
+  margin-right: 40px;
+  filter: initial;
+  z-index: 2000 !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.containerSecond img {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .containerSecond {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    gap: 30px;
+  }
+
+  .containerSecond img:first-child {
+    rotate: 90deg;
+  }
+
+  .containerSecond img:nth-child(2) {
+margin: 0 51px;
+  }
+  .containerSecond img:last-child {
+    rotate: 90deg;
+  }
+}

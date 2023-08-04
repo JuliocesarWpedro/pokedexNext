@@ -1,0 +1,86 @@
+.containerFirst {
+  color: white;
+  z-index: 2000 !important;
+  position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-right: 40px;
+}
+
+.buttons {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.buttons button {
+  font-family: Montserrat;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+color: white;
+}
+
+.buttons button:nth-child(1) {
+  margin-right: 8px;
+}
+
+
+.caracteristicas {
+  display: flex;
+  gap: 24px;
+}
+
+.peso, .altura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.peso div, .altura div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.peso p,
+.altura p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.peso div p,
+.altura div p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.numberid {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+}
+
+.titlePokemon {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 43px;
+  letter-spacing: 0em;
+}
+
+.imagePokemon {
+  position: absolute;
+  top: -268px;
+}
