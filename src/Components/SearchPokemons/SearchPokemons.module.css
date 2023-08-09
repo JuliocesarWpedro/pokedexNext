@@ -1,0 +1,42 @@
+.containerSearchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 72px;
+}
+
+.inputContainer {
+  display: flex;
+}
+
+.inputContainer input {
+  outline: none;
+  background: transparent;
+  border: 2px solid #2F5AFF;
+  border-radius: 5px 0px 0px 5px; 
+  width: calc(488px - 56px);
+  height: 56px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fff;
+  padding: 16px;
+}
+
+.containerImg {
+  display: block;
+  outline: none;
+  border: none;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+text-align: center;
+align-items: center;
+border-radius: 0px 8px 8px 0px;
+  background: #2F5AFF;
+  width: 56px;
+  height: 56px;
+}
