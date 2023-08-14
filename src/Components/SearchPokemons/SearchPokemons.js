@@ -17,7 +17,7 @@ const SearchPokemons = ({ setErrorPokemons, errorPokemons }) => {
     } else {
       setErrorPokemons(false);
     }
-  }, [error]);
+  }, [error, setErrorPokemons]);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -49,7 +49,6 @@ const SearchPokemons = ({ setErrorPokemons, errorPokemons }) => {
         </button>
       </div>
       {errorPokemons && <ErrorPokemon setErrorPokemons={setErrorPokemons} />}
-      {data && <p>{data.height}</p>}
     </div>
   );
 };

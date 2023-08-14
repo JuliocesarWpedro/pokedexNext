@@ -10,7 +10,6 @@ const PokemonSelect = () => {
   let eTarget;
   function handleClick(event) {
     let eTarget = event.target;
-    console.log(eTarget);
     if (
       event.target.classList.contains(
         'PokemonSelect_containerPokemonSelect__KEI9R',
@@ -25,12 +24,11 @@ const PokemonSelect = () => {
 
   return (
     <div onClick={handleClick} className={styles.containerPokemonSelect}>
-      {eTarget && <p style={{ color: 'white' }}>{eTarget}</p>}
       <SearchPokemons
         setErrorPokemons={setErrorPokemons}
         errorPokemons={errorPokemons}
       />
-      <RenderPokemon />
+      <RenderPokemon errorPokemons={errorPokemons} setErrorPokemons={setErrorPokemons} />
     </div>
   );
 };

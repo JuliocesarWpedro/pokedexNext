@@ -1,6 +1,6 @@
 .pokemonError {
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   top: 30%;
   left: 50%;
  display: flex;

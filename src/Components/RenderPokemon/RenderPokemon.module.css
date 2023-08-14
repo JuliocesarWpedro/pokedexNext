@@ -1,0 +1,97 @@
+.renderPokemonsGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokedexGrid {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+justify-content: center;
+justify-items: center;
+grid-row-gap: 160px;
+row-gap: 160px;
+grid-column-gap: 32px;
+column-gap: 32px;
+padding-top: 150px;
+padding-bottom: 32px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+
+
+.slideCards {
+  display: flex;
+  gap: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.slideCards img:first-child {
+  cursor: pointer;
+  margin-right: 26px;
+}
+
+.slideCards img:last-child {
+  cursor: pointer;
+  margin-left: 26px;
+}
+
+.slideCards div {
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  width: 40px;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slideCards div p {
+  font-family: Montserrat;
+font-size: 16px;
+font-weight: 700;
+line-height: 16px;
+letter-spacing: 0em;
+  color: white;
+text-align: center;
+}
+
+
+@media (max-width: 800px) {
+  
+  .pokedexGrid {
+ grid-template-columns: 1fr;
+  }
+  
+  
+  
+  .slideCards {
+   
+  
+  }
+  
+  .slideCards img:first-child {
+  
+  }
+  
+  .slideCards img:last-child {
+  
+  }
+  
+  .slideCards div {
+    
+  }
+  
+  
+  .slideCards div p {
+  
+  }
+  
+}

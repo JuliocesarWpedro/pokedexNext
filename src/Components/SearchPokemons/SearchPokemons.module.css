@@ -40,3 +40,9 @@ border-radius: 0px 8px 8px 0px;
   width: 56px;
   height: 56px;
 }
+
+@media (max-width: 800px) {
+  .inputContainer input {
+    width: calc(343px - 56px);
+  }
+}
