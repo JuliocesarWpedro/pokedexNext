@@ -29,7 +29,6 @@ const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
             setData(jsonData);
             setImgPokemon(jsonData.sprites.other.home.front_default);
             setId(jsonData.id);
-            setFilter1(true);
             setFilter2(true);
           }
         } catch (error) {
