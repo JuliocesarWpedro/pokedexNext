@@ -7,6 +7,16 @@
   z-index: 10;
 }
 
+.buttonsTypes {
+justify-content: left;
+align-items: left;
+  text-align: left;
+  margin-top: 12px;
+  display: flex;
+ 
+  gap: 8px;
+}
+
 .textPokemon {
   width: 45%;
   display: flex;

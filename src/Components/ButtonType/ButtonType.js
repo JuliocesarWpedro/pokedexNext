@@ -29,10 +29,10 @@ const ButtonType = ({ type }) => {
       colorBackground: '#0076FF',
       text: 'Dragon',
     },
-    eletric: {
-      src: '/images/iconesTypes/eletric.svg',
+    electric: {
+      src: '/images/iconesTypes/electric.svg',
       colorBackground: '#FFDE00',
-      text: 'Eletric',
+      text: 'Electric',
     },
     grass: {
       src: '/images/iconesTypes/grass.svg',
@@ -49,12 +49,22 @@ const ButtonType = ({ type }) => {
       colorBackground: '#14A8FF',
       text: 'Water',
     },
+    normal: {
+      src: '/images/iconesTypes/normal.svg',
+      colorBackground: 'rgb(202, 202, 202)',
+      text: 'Normal',
+    },
+    ground: {
+      src: '/images/iconesTypes/ground.svg',
+      colorBackground: 'rgb(83, 64, 38)',
+      text: 'Ground',
+    },
   };
 
   const selectedType = types[type];
 
   if (!selectedType) {
-    return null; // Renderizar nada se o tipo não for válido
+    return null;
   }
 
   return (

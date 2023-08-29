@@ -1,12 +1,37 @@
 'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import styles from '../PokemonHome/PokemonHome.module.css';
 import PokemonDetails from '../pokemonDetails/pokemonDetails';
+import ButtonType from '../ButtonType/ButtonType';
 
 const PokemonHome = () => {
   const [details, setDetails] = React.useState(false);
+  const [data, setData] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+  const [imgPokemon, setImgPokemon] = React.useState('');
+  const [id, setId] = React.useState(0);
+
+  async function fetchPokemons() {
+    try {
+      setLoading(true);
+      let url = `https://pokeapi.co/api/v2/pokemon/6/`;
+      const response = await fetch(url);
+      if (response.ok) {
+        const jsonData = await response.json();
+        setData(jsonData);
+        setImgPokemon(jsonData.sprites.other.home.front_default);
+        setId(jsonData.id);
+      }
+      setPokemons(json.results);
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
+  }
+  React.useEffect(() => {
+    fetchPokemons();
+  }, []);
 
   function handleClick(event) {
     event.preventDefault();
@@ -15,20 +40,30 @@ const PokemonHome = () => {
 
   return (
     <>
-      {details && <PokemonDetails setDetails={setDetails} />}
+      {details && data && (
+        <PokemonDetails
+          setDetails={setDetails}
+          data={data}
+          id={id}
+          name={'Charizard'}
+          img={imgPokemon}
+        />
+      )}
       <div className={`${styles.containerPokemon}`}>
         <div className={styles.textPokemon}>
           <p className={styles.number}>#006</p>
-          <div className={styles.buttonCarac}>
-            <button>Fire</button>
-            <button>Flying</button>
-          </div>
+          {data && (
+            <div className={styles.buttonsTypes}>
+              <ButtonType type={data.types[0].type.name} />
+              {data.types[1] && <ButtonType type={data.types[1].type.name} />}
+            </div>
+          )}
           <h1 className={styles.textFirst}>Charizard</h1>
           <p className={styles.textSecundary}>
-            Charizard se assemelha a um grande tradicional dragão europeu.
             Apesar da semelhança, Charizard é explicitamente um Pokémon dos
-            tipos Fogo e Voador, e não um tipo Dragão, exceto em sua forma "Mega
-            Charizard X"; No entanto, ele pode aprender ataques do tipo Dragão.
+            tipos Fogo e Voador, e não um tipo Dragão, exceto em sua forma
+            &ldquo;Mega Charizard X&rdquo;; No entanto, ele pode aprender
+            ataques do tipo Dragão.
           </p>
           <button onClick={handleClick} className={styles.buttonDetails}>
             Mais detalhes

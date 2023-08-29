@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const header = () => {
   return (
-    <header className={`${styles.header}`}>
+    <header id="header" className={`${styles.header}`}>
       <div className={`${styles.logoContainer}`}>
         <Link className={`${styles.logo}`} href="/">
           <Image

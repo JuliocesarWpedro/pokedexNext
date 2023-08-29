@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from '../containerThree/containerThree.module.css';
 
-const ContainerThree = () => {
-  const numberHp = 78;
-  const numberAtk = 84;
-  const numberDf = 78;
-  const numberSpAtk = 109;
-  const numberSpDef = 85;
-  const numberSpeed = 100;
+const ContainerThree = ({ data }) => {
+  const numberHp = data.stats[0].base_stat;
+  const numberAtk = data.stats[1].base_stat;
+  const numberDf = data.stats[2].base_stat;
+  const numberSpAtk = data.stats[3].base_stat;
+  const numberSpDef = data.stats[4].base_stat;
+  const numberSpeed = data.stats[5].base_stat;
 
   return (
     <div className={`${styles.containerThree}`}>

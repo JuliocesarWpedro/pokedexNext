@@ -75,22 +75,10 @@ background: #555555;
 }
 
 @media (max-width: 1000px) {
+  .containerThree {
+    padding: 0 24px;
+  }
   .stats div .progressStats {
     width: 169px;
   }
-
-  .progessStatsGreenHP,
-.progessStatsGreenAtk,
-.progessStatsGreenDf,
-.progessStatsGreenSpAtk,
-.progessStatsGreenSpDef,
-.progessStatsGreenSpeed {
-  position: absolute;
-  top: 0;
-  content: '';
-  display: block;
-  height: 8px;
-  background: #1CD80E;
-  box-shadow: 0px 0px 12px 4px #1CD80E40;
-}
 }

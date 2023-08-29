@@ -1,55 +1,106 @@
 'use client';
-
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './SearchPokemons.module.css';
 import Image from 'next/image';
-import SearchPokemon from '../SearchPokemon';
+import PokemonDetails from '../pokemonDetails/pokemonDetails';
 import ErrorPokemon from '../ErrorPokemon';
+import Link from 'next/link';
+import FilterTypes from '../FilterTypes/FilterTypes';
 
-const SearchPokemons = ({ setErrorPokemons, errorPokemons }) => {
-  const [search, setSearch] = React.useState('');
-  const inputEl = React.useRef(null);
-  const { data, request, error } = SearchPokemon();
+const SearchPokemons = ({
+  setErrorPokemons,
+  errorPokemons,
+  isFilterPokemon,
+  setIsFilterPokemon,
+  isHaveFilter,
+  setIsHaveFilter,
+}) => {
+  const [searchValue, setSearchValue] = useState('');
+  const inputEl = useRef(null);
+  const [details, setDetails] = useState(false);
+  const [data, setData] = useState(null);
+  const [imgPokemon, setImgPokemon] = useState('');
+  const [error, setError] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (error) {
       setErrorPokemons(true);
-    } else {
-      setErrorPokemons(false);
     }
-  }, [error, setErrorPokemons]);
+  }, [setErrorPokemons, error]);
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    if (search) {
-      request(search);
+  const handleSearch = async () => {
+    if (searchValue) {
+      try {
+        const url = `https://pokeapi.co/api/v2/pokemon/${searchValue}`;
+        const response = await fetch(url);
+
+        if (response.ok) {
+          const json = await response.json();
+          setData(json);
+          setImgPokemon(json.sprites.other.home.front_default);
+          setDetails(true);
+        } else {
+          setError(true);
+        }
+      } catch (error) {
+        setError(true);
+      }
     }
   };
 
   const handleChange = (event) => {
-    setSearch(event.target.value.toLowerCase());
+    setSearchValue(event.target.value.toLowerCase());
+    setError(false);
   };
 
   return (
-    <div className={styles.containerSearchBar}>
-      <div className={styles.inputContainer}>
-        <input
-          ref={inputEl}
-          type="text"
-          placeholder="Pesquisar Pokemon"
-          onChange={handleChange}
-        />
-        <button className={styles.containerImg} onClick={handleSearch}>
+    <>
+      <div className={styles.buttonScroll}>
+        <Link href="#header">
           <Image
-            src="/images/vector.png"
-            width="19"
-            height="19"
-            alt="Icone de pesquisar"
+            src="/images/icon-home.svg"
+            width="24"
+            height="24"
+            alt="Ícone de inicio"
           />
-        </button>
+          <p>Início</p>
+        </Link>
       </div>
-      {errorPokemons && <ErrorPokemon setErrorPokemons={setErrorPokemons} />}
-    </div>
+      <div className={styles.containerSearchBar}>
+        {details && data && (
+          <PokemonDetails
+            setDetails={setDetails}
+            data={data}
+            id={data.id}
+            name={data.name}
+            img={data.sprites.other.home.front_default}
+          />
+        )}
+        <FilterTypes
+          isHaveFilter={isHaveFilter}
+          setIsHaveFilter={setIsHaveFilter}
+          isFilterPokemon={isFilterPokemon}
+          setIsFilterPokemon={setIsFilterPokemon}
+        />
+        <div className={styles.inputContainer}>
+          <input
+            ref={inputEl}
+            type="text"
+            placeholder="Pesquisar Pokémon"
+            onChange={handleChange}
+          />
+          <button className={styles.containerImg} onClick={handleSearch}>
+            <Image
+              src="/images/vector.png"
+              width="19"
+              height="19"
+              alt="Icone de pesquisar"
+            />
+          </button>
+        </div>
+        {errorPokemons && <ErrorPokemon setErrorPokemons={setErrorPokemons} />}
+      </div>
+    </>
   );
 };
 

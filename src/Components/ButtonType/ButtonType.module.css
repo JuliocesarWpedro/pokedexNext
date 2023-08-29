@@ -1,11 +1,12 @@
 .buttonType {
-  width: 84px;
+  width: 91px;
 height: 32px;
+padding: 4px 8px 4px 8px;
 border-radius: 8px;
+gap: 8px;
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 8px;
 border: none;
 cursor: initial;
 }
@@ -16,6 +17,5 @@ cursor: initial;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
-  text-align: left;
   color: #fff;
 }

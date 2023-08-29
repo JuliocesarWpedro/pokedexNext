@@ -16,6 +16,7 @@
 
 @media (max-width: 1000px) {
   .containerSecond {
+    max-height: 50px;
     flex-direction: row;
     align-items: center;
     justify-content: center;

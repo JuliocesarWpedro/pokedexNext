@@ -7,6 +7,9 @@ import SearchPokemons from '../SearchPokemons/SearchPokemons';
 
 const PokemonSelect = () => {
   const [errorPokemons, setErrorPokemons] = React.useState(false);
+  const [isFilterPokemon, setIsFilterPokemon] = React.useState([]);
+  const [isHaveFilter, setIsHaveFilter] = React.useState(false);
+
   let eTarget;
   function handleClick(event) {
     let eTarget = event.target;
@@ -25,10 +28,21 @@ const PokemonSelect = () => {
   return (
     <div onClick={handleClick} className={styles.containerPokemonSelect}>
       <SearchPokemons
+        isFilterPokemon={isFilterPokemon}
+        setIsFilterPokemon={setIsFilterPokemon}
         setErrorPokemons={setErrorPokemons}
         errorPokemons={errorPokemons}
+        isHaveFilter={isHaveFilter}
+        setIsHaveFilter={setIsHaveFilter}
       />
-      <RenderPokemon errorPokemons={errorPokemons} setErrorPokemons={setErrorPokemons} />
+      <RenderPokemon
+        isHaveFilter={isHaveFilter}
+        setIsHaveFilter={setIsHaveFilter}
+        errorPokemons={errorPokemons}
+        isFilterPokemon={isFilterPokemon}
+        setIsFilterPokemon={setIsFilterPokemon}
+        setErrorPokemons={setErrorPokemons}
+      />
     </div>
   );
 };

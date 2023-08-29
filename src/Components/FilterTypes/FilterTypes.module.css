@@ -1,0 +1,66 @@
+.filterTypes {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  height: 32px;
+  align-items: left;
+  justify-content: end;
+}
+
+.filterTypes h2 {
+  margin-bottom: 16px;
+  font-family: Montserrat;
+font-size: 24px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: 0em;
+color: #FFFFFF;
+}
+
+.buttonType {
+  width: 91px;
+padding: 4px 8px 4px 8px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+cursor: initial;
+}
+
+.buttonType p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #fff;
+}
+
+.swiperContainer {
+  display: flex;
+}
+
+.swiperContainer button {
+  display: block;
+outline: none;
+border: none;
+max-width: 100%;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+border-radius: 0px 8px 8px 0px;
+background: #2F5AFF;
+width: 56px;
+}
+
+@media (max-width: 800px) {
+  .swiperContainer {
+   justify-content: center;
+   text-align: center;
+  }
+  .filterTypes h2 {
+    text-align: center;
+  }
+}

@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './ButtonDetalhes.module.css';
-import Image from 'next/image';
+import styles from '../CardPokemon/CardPokemon.module.css';
 
-const ButtonDetalhes = ({ type }) => {
+const Blur = ({ type }) => {
   const types = {
     fire: {
       colorBackground: '#FF9900',
@@ -42,23 +41,14 @@ const ButtonDetalhes = ({ type }) => {
   const selectedType = types[type];
 
   if (!selectedType) {
-    return null; // Renderizar nada se o tipo não for válido
+    return null;
   }
-
   return (
-    <button
-      style={{ backgroundColor: selectedType.colorBackground }}
-      className={styles.button}
-    >
-      <Image
-        src="/images/icon-bolt.svg"
-        width={24}
-        height={24}
-        alt="Icone do pokemon"
-      />
-      <p>Mais detalhes</p>
-    </button>
+    <div
+      style={{ background: selectedType.colorBackground }}
+      className={styles.containerEffect}
+    ></div>
   );
 };
 
-export default ButtonDetalhes;
+export default Blur;
