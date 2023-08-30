@@ -309,7 +309,11 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
           />
         </button>
         {maxFilterExcedido && (
-          <p style={{ color: 'white' }}>Selecione 1 ou 2 filtros no máximo</p>
+          <div className={styles.FilterExcedido}>
+            <p style={{ color: 'white' }}>
+              Selecione 1 ou 2 filtros <span>no máximo</span>
+            </p>
+          </div>
         )}
       </div>
     </div>

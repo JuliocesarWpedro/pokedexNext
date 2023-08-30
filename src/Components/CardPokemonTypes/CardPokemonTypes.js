@@ -5,6 +5,7 @@ import ButtonDetalhes from '../ButtonDetalhes/ButtonDetalhes';
 import ButtonType from '../ButtonType/ButtonType';
 import PokemonDetails from '../pokemonDetails/pokemonDetails';
 import Blur from '../Blur/Blur';
+import Loading from '../Loading/Loading';
 
 const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
   const [details, setDetails] = React.useState(false);
@@ -78,7 +79,7 @@ const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+         null
       ) : (
         data && (
           <>

@@ -4,6 +4,7 @@ import styles from './RenderPokemon.module.css';
 import Image from 'next/image';
 import CardPokemon from '../CardPokemon/CardPokemon';
 import CardPokemonTypes from '../CardPokemonTypes/CardPokemonTypes';
+import Loading from '../Loading/Loading';
 
 const RenderPokemon = ({
   errorPokemons,
@@ -22,18 +23,22 @@ const RenderPokemon = ({
 
   async function Filterpokemons() {
     if (isFilterPokemon.length === 1) {
+      setLoading(true);
       const url = `https://pokeapi.co/api/v2/type/${isFilterPokemon[0]}/`;
       const response = await fetch(url);
       const json = await response.json();
       if (json) {
         setPokemonsFilter(json.pokemon);
+        setLoading(false);
       }
     } else if (isFilterPokemon.length === 2) {
+      setLoading(true);
       const url = `https://pokeapi.co/api/v2/type/${isFilterPokemon[0]}/`;
       const response = await fetch(url);
       const json = await response.json();
       if (json) {
         setPokemonsFilter(json.pokemon);
+        setLoading(false);
       }
     }
   }
@@ -147,7 +152,7 @@ const RenderPokemon = ({
         </div>
       )}
       {loading || !pokemons ? (
-        <p>Espere mais alguns segundos</p>
+        <Loading />
       ) : (
         <div className={styles.pokedexGrid}>
           {pokemonsFilter &&
