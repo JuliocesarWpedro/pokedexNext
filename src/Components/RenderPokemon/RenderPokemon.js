@@ -16,6 +16,9 @@ const RenderPokemon = ({
   const [pokemons, setPokemons] = React.useState([]);
   const [isFilter, setisFilter] = React.useState(false);
   const [pokemonsFilter, setPokemonsFilter] = React.useState([]);
+  const [pages, setPages] = React.useState(1);
+  const [totalPages, setTotalPages] = React.useState(0);
+  const [offSet, setOffset] = React.useState(0);
 
   async function Filterpokemons() {
     if (isFilterPokemon.length === 1) {
@@ -59,12 +62,27 @@ const RenderPokemon = ({
     }
   }
 
+  function onLeftClick() {
+    if (pages > 1) {
+      setPages(pages - 1);
+      setOffset(offSet - 30);
+    }
+  }
+
+  function onRightClick() {
+    if (pages !== totalPages) {
+      setPages(pages + 1);
+      setOffset(offSet + 30);
+    }
+  }
+
   async function fetchPokemons() {
     try {
       setLoading(true);
-      let url = `https://pokeapi.co/api/v2/pokemon?limit=${30}&offset=${0}`;
+      let url = `https://pokeapi.co/api/v2/pokemon?limit=${30}&offset=${offSet}`;
       const response = await fetch(url);
       const json = await response.json();
+      setTotalPages(Math.ceil(json.count / 30));
       setPokemons(json.results);
     } catch (error) {
       console.log('error', error);
@@ -78,10 +96,56 @@ const RenderPokemon = ({
     fetchPokemons().finally(() => {
       setLoading(false);
     });
-  }, []);
+  }, [pages]);
 
   return (
     <div onClick={handleClick} className={styles.renderPokemonsGrid}>
+      {isHaveFilter === false && (
+        <div className={styles.slideCards}>
+          {pages === 1 ? (
+            <Image
+              className={styles.Desativado}
+              onClick={onLeftClick}
+              src="/images/Vector(2).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          ) : (
+            <Image
+              onClick={onLeftClick}
+              src="/images/Vector(2).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          )}
+
+          <p className={styles.totalPokemons}>{pages}</p>
+          <p>DE</p>
+          <div>
+            <p>{totalPages}</p>
+          </div>
+          {pages === totalPages ? (
+            <Image
+              onClick={onRightClick}
+              className={styles.Desativado}
+              src="/images/Vector(3).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          ) : (
+            <Image
+              onClick={onRightClick}
+              src="/images/Vector(3).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          )}
+        </div>
+      )}
       {loading || !pokemons ? (
         <p>Espere mais alguns segundos</p>
       ) : (
@@ -110,29 +174,52 @@ const RenderPokemon = ({
             })}
         </div>
       )}
-      <div className={styles.slideCards}>
-        <Image
-          src="/images/Vector(2).png"
-          width="10"
-          height="17"
-          alt="Seta para esquerda"
-        />
-        <div>
-          <p>1</p>
+      {isHaveFilter === false && (
+        <div className={styles.slideCards}>
+          {pages === 1 ? (
+            <Image
+              className={styles.Desativado}
+              onClick={onLeftClick}
+              src="/images/Vector(2).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          ) : (
+            <Image
+              onClick={onLeftClick}
+              src="/images/Vector(2).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          )}
+
+          <p className={styles.totalPokemons}>{pages}</p>
+          <p>DE</p>
+          <div>
+            <p>{totalPages}</p>
+          </div>
+          {pages === totalPages ? (
+            <Image
+              onClick={onRightClick}
+              className={styles.Desativado}
+              src="/images/Vector(3).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          ) : (
+            <Image
+              onClick={onRightClick}
+              src="/images/Vector(3).png"
+              width="10"
+              height="17"
+              alt="Seta para esquerda"
+            />
+          )}
         </div>
-        <div>
-          <p>2</p>
-        </div>
-        <div>
-          <p>3</p>
-        </div>
-        <Image
-          src="/images/Vector(3).png"
-          width="10"
-          height="17"
-          alt="Seta para esquerda"
-        />
-      </div>
+      )}
     </div>
   );
 };

@@ -55,7 +55,7 @@ color: #fff;
 }
 
 .pokemonImage {
-  z-index: 3000;
+  z-index: 20;
   position: absolute;
   width: 256px;
   height: 256px;

@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   background: #00000080;
-  z-index: 1000;
+  z-index: 20;
   top: 0;
   left: 0;
   position: fixed;
@@ -18,7 +18,7 @@ border-radius: 10px;
   top: 25%;
   left: 50%;
   transform: translate(-50%);
-  z-index: 1001;
+  z-index: 21;
   max-width: 949px;
   max-height: 1000px;
   padding: 20px;
@@ -29,7 +29,7 @@ border-radius: 10px;
 
 .fecharIcon {
   cursor: pointer;
-  z-index: 1100;
+  z-index: 22;
   top: 27.75px;
   right: 27.75px;
   position: absolute;

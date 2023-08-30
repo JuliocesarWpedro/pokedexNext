@@ -27,7 +27,11 @@ const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
           if (response.ok) {
             const jsonData = await response.json();
             setData(jsonData);
-            setImgPokemon(jsonData.sprites.other.home.front_default);
+            if (jsonData.sprites.other.home.front_default) {
+              setImgPokemon(jsonData.sprites.other.home.front_default);
+            } else {
+              setImgPokemon(jsonData.sprites.front_default);
+            }
             setId(jsonData.id);
             setFilter2(true);
           }
@@ -42,11 +46,18 @@ const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
           if (response.ok) {
             const jsonData = await response.json();
             if (
-              jsonData.types[1] &&
-              jsonData.types[0].type.name === isFilterPokemon[0] &&
-              jsonData.types[1].type.name === isFilterPokemon[1]
+              (jsonData.types[1] &&
+                jsonData.types[0].type.name === isFilterPokemon[0] &&
+                jsonData.types[1].type.name === isFilterPokemon[1]) ||
+              (jsonData.types[1] &&
+                jsonData.types[1].type.name === isFilterPokemon[0] &&
+                jsonData.types[0].type.name === isFilterPokemon[1])
             ) {
-              setImgPokemon(jsonData.sprites.other.home.front_default);
+              if (jsonData.sprites.other.home.front_default) {
+                setImgPokemon(jsonData.sprites.other.home.front_default);
+              } else {
+                setImgPokemon(jsonData.sprites.front_default);
+              }
               setId(jsonData.id);
               setData(jsonData);
               setFilter2(true);
@@ -82,7 +93,7 @@ const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
             )}
             {filter2 && (
               <div className={styles.pokemonCard}>
-                {imgPokemon && (
+                {loading === false && imgPokemon && (
                   <Image
                     className={styles.pokemonImage}
                     src={imgPokemon}
@@ -91,7 +102,6 @@ const CardPokemonTypes = ({ url, name, isFilterPokemon }) => {
                     alt="Imagem do Pokemon"
                   />
                 )}
-
                 <div className={styles.containerText}>
                   <p className={styles.idPokemon}>#{id}</p>
                   <h1 className={styles.titlePokemon}>{name}</h1>

@@ -26,7 +26,7 @@ const ButtonDetalhes = ({ type }) => {
       colorBackground: '#1CD80E',
     },
     poison: {
-      colorBackground: '#F149FF',
+      colorBackground: '#b97fc9',
     },
     water: {
       colorBackground: '#14A8FF',
@@ -36,6 +36,24 @@ const ButtonDetalhes = ({ type }) => {
     },
     ground: {
       colorBackground: 'rgb(83, 64, 38)',
+    },
+    rock: {
+      colorBackground: '#a38c21',
+    },
+    ghost: {
+      colorBackground: '#7b62a3',
+    },
+    psychic: {
+      colorBackground: '#f366b9',
+    },
+    fighting: {
+      colorBackground: '#d56723',
+    },
+    ice: {
+      colorBackground: '#51c4e7',
+    },
+    steel: {
+      colorBackground: '#9eb7b8',
     },
   };
 

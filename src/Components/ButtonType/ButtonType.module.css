@@ -1,12 +1,12 @@
 .buttonType {
-  width: 91px;
+  width: auto;
 height: 32px;
 padding: 4px 8px 4px 8px;
 border-radius: 8px;
 gap: 8px;
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: space-between;
 border: none;
 cursor: initial;
 }

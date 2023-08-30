@@ -1,6 +1,6 @@
 .containerFirst {
   color: white;
-  z-index: 2000 !important;
+  z-index: 10 !important;
   position: relative;
   text-align: center;
 display: flex;
@@ -88,7 +88,7 @@ margin-right: 40px;
 .imagePokemon {
   position: absolute;
   top: -180px;
-  z-index: 3000;
+  z-index: 20;
 }
 
 @media (max-width: 1000px) {

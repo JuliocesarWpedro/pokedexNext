@@ -28,7 +28,6 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
     } else if (selectedOptions.length > 2) {
       setIsFilter(false);
       setMaxFilterExcedido(true);
-      // Chamar erro dizendo para só selecionar no máximo 2 filtros
     }
   }, [selectedOptions, setIsHaveFilter]);
 
@@ -93,8 +92,38 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
     },
     ground: {
       src: '/images/iconesTypes/ground.svg',
-      colorBackground: 'rgb(83, 64, 38)',
       text: 'Ground',
+      colorBackground: 'rgb(83, 64, 38)',
+    },
+    rock: {
+      src: '/images/iconesTypes/rock.svg',
+      text: 'Rock',
+      colorBackground: '#a38c21',
+    },
+    ghost: {
+      src: '/images/iconesTypes/ghost.svg',
+      text: 'Ghost',
+      colorBackground: '#7b62a3',
+    },
+    psychic: {
+      src: '/images/iconesTypes/psychic.svg',
+      text: 'Psychic',
+      colorBackground: '#f366b9',
+    },
+    fighting: {
+      src: '/images/iconesTypes/fighting.svg',
+      text: 'Fighting',
+      colorBackground: '#d56723',
+    },
+    ice: {
+      src: '/images/iconesTypes/ice.svg',
+      text: 'Ice',
+      colorBackground: '#51c4e7',
+    },
+    steel: {
+      src: '/images/iconesTypes/steel.svg',
+      text: 'Steel',
+      colorBackground: '#9eb7b8',
     },
   };
 
@@ -154,6 +183,41 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
       label: 'Ground',
       imgSrc: types.ground.src,
     },
+    {
+      value: 'rock',
+      label: 'Rock',
+      imgSrc: types.rock.src,
+    },
+    {
+      value: 'ghost',
+      label: 'Ghost',
+      imgSrc: types.ghost.src,
+    },
+    {
+      value: 'ground',
+      label: 'Ground',
+      imgSrc: types.ground.src,
+    },
+    {
+      value: 'psychic',
+      label: 'Psychic',
+      imgSrc: types.psychic.src,
+    },
+    {
+      value: 'fighting',
+      label: 'Fighting',
+      imgSrc: types.fighting.src,
+    },
+    {
+      value: 'ice',
+      label: 'Ice',
+      imgSrc: types.ice.src,
+    },
+    {
+      value: 'steel',
+      label: 'Steel',
+      imgSrc: types.steel.src,
+    },
   ];
 
   const customStyles = {
@@ -195,9 +259,11 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
       ...provided,
       color: 'white',
     }),
+    menuPortal: (base) => ({
+      ...base,
+      zIndex: 9999,
+    }),
   };
-
-  const menuPortalZIndex = 30000;
 
   function onClickButton(event) {
     event.preventDefault();
@@ -232,7 +298,6 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
                 setSelectedOptions([]);
               }
             }}
-            menuPortalZIndex={menuPortalZIndex}
           />
         </div>
         <button onClick={onClickButton}>

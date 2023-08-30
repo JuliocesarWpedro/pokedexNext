@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 23;
 }
 
 .pokedexGrid {
@@ -15,6 +16,7 @@ grid-column-gap: 32px;
 column-gap: 32px;
 padding-top: 150px;
 padding-bottom: 32px;
+z-index: 24;
 max-width: 1200px;
 margin: 0 auto;
 }
@@ -28,21 +30,29 @@ margin: 0 auto;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
+}
 
+.slideCards img {
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: transform .2s ease;
+}
+
+.slideCards img:hover {
+  transform: scale(1.4);
+  background: linear-gradient(180deg, #EE8328 0%, #E14318 100%);
 }
 
 .slideCards img:first-child {
   cursor: pointer;
-  margin-right: 26px;
+  margin-right: 10px;
 }
 
 .slideCards img:last-child {
   cursor: pointer;
-  margin-left: 26px;
+  margin-left: 10px;
 }
 
 .slideCards div {
-  cursor: pointer;
   border: 2px solid #FFFFFF;
   border-radius: 8px;
   width: 40px;
@@ -52,46 +62,48 @@ margin: 0 auto;
   align-items: center;
 }
 
+.totalPokemons {
+  background: #2F5AFF;
+  width: 40px;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  align-items: center;
+cursor: default ;
+border: 2px solid #fff;
+}
+
+
 
 .slideCards div p {
   font-family: Montserrat;
 font-size: 16px;
-font-weight: 700;
+font-weight: 400;
 line-height: 16px;
 letter-spacing: 0em;
-  color: white;
+color: white;
 text-align: center;
+cursor: default ;
+}
+
+.Desativado {
+  opacity: 0.5;
+}
+
+.Desativado:hover {
+    transform: none !important;
+    background: none !important;
 }
 
 
 @media (max-width: 800px) {
-  
   .pokedexGrid {
  grid-template-columns: 1fr;
   }
-  
-  
-  
-  .slideCards {
-   
-  
-  }
-  
-  .slideCards img:first-child {
-  
-  }
-  
-  .slideCards img:last-child {
-  
-  }
-  
-  .slideCards div {
-    
-  }
-  
-  
-  .slideCards div p {
-  
-  }
-  
 }

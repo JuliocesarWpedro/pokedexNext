@@ -10,7 +10,7 @@ const CardPokemon = ({ url, name }) => {
   const [details, setDetails] = React.useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [imgPokemon, setImgPokemon] = useState('');
+  const [imgPokemon, setImgPokemon] = useState(null);
   const [id, setId] = React.useState(0);
 
   function handleClick(event) {
@@ -25,7 +25,11 @@ const CardPokemon = ({ url, name }) => {
         if (response.ok) {
           const jsonData = await response.json(); // Usar jsonData em vez de data
           setData(jsonData);
-          setImgPokemon(jsonData.sprites.other.home.front_default);
+          if (jsonData.sprites.other.home.front_default) {
+            setImgPokemon(jsonData.sprites.other.home.front_default);
+          } else {
+            setImgPokemon(jsonData.sprites.front_default);
+          }
           setId(jsonData.id);
         }
       } catch (error) {
@@ -42,7 +46,8 @@ const CardPokemon = ({ url, name }) => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        data && (
+        data &&
+        imgPokemon && (
           <>
             {details && (
               <PokemonDetails
@@ -54,7 +59,7 @@ const CardPokemon = ({ url, name }) => {
               />
             )}
             <div className={styles.pokemonCard}>
-              {imgPokemon && (
+              {loading === false && imgPokemon && (
                 <Image
                   className={styles.pokemonImage}
                   src={imgPokemon}
@@ -63,7 +68,6 @@ const CardPokemon = ({ url, name }) => {
                   alt="Imagem do Pokemon"
                 />
               )}
-
               <div className={styles.containerText}>
                 <p className={styles.idPokemon}>#{id}</p>
                 <h1 className={styles.titlePokemon}>{name}</h1>
