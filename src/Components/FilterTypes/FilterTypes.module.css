@@ -5,7 +5,7 @@
   height: 32px;
   align-items: left;
   justify-content: end;
-  z-index: 60 !important;
+  z-index: 30 !important;
 }
 
 .filterTypes h2 {

@@ -261,7 +261,7 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
     }),
     menuPortal: (base) => ({
       ...base,
-      zIndex: 9999,
+      zIndex: 30,
     }),
   };
 

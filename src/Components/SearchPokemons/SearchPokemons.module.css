@@ -12,7 +12,7 @@
 
 .inputContainer {
   display: flex;
-  z-index: 60 !important;
+  z-index: 30 !important;
 }
 
 .buttonScroll {
