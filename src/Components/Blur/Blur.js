@@ -48,7 +48,7 @@ const Blur = ({ type }) => {
     fighting: {
       colorBackground: '#d56723',
     },
-    
+
     ice: {
       colorBackground: '#51c4e7',
     },

@@ -27,3 +27,9 @@ color: #fff;
 .button:hover {
     filter: contrast(0.7) brightness(1.2);
 }
+
+@media (max-width: 450px) {
+  .button {
+    width: 284px;
+  }
+}

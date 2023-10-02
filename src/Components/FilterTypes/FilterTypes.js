@@ -314,7 +314,7 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
             src="/images/Vector.png"
             width="24"
             height="24"
-            alt="Image de buscar"
+            alt="Icone de buscar"
           />
         </button>
         {maxFilterExcedido && (

@@ -91,9 +91,9 @@ const SearchPokemons = ({
           />
           <button className={styles.containerImg} onClick={handleSearch}>
             <Image
-              src="/images/vector.png"
-              width="19"
-              height="19"
+              src="/images/Vector.png"
+              width="24"
+              height="24"
               alt="Icone de pesquisar"
             />
           </button>
