@@ -10,6 +10,7 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
   const [optionsFilter, setOptionsFilter] = React.useState([]);
   const [maxFilterExcedido, setMaxFilterExcedido] = React.useState(false);
   const [renderPokemonsFilter, SetRenderPokemonsFilter] = React.useState([]);
+  const [customStyles, setCustomStyles] = React.useState({});
 
   React.useEffect(() => {
     if (selectedOptions.length === 0) {
@@ -39,93 +40,95 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
 
   const animetedComponents = makeAnimated();
 
-  const types = {
-    fire: {
-      src: '/images/iconesTypes/fire.svg',
-      colorBackground: '#FF9900',
-      text: 'Fire',
-    },
-    flying: {
-      src: '/images/iconesTypes/flying.svg',
-      colorBackground: '#89BDFF',
-      text: 'Flying',
-    },
-    bug: {
-      src: '/images/iconesTypes/bug.svg',
-      colorBackground: '#7BCF00',
-      text: 'Bug',
-    },
-    dark: {
-      src: '/images/iconesTypes/dark.svg',
-      colorBackground: '#5A566A',
-      text: 'Dark',
-    },
-    dragon: {
-      src: '/images/iconesTypes/dragon.svg',
-      colorBackground: '#0076FF',
-      text: 'Dragon',
-    },
-    electric: {
-      src: '/images/iconesTypes/electric.svg',
-      colorBackground: '#FFDE00',
-      text: 'Electric',
-    },
-    grass: {
-      src: '/images/iconesTypes/grass.svg',
-      colorBackground: '#1CD80E',
-      text: 'Grass',
-    },
-    poison: {
-      src: '/images/iconesTypes/poison.svg',
-      colorBackground: '#F149FF',
-      text: 'Poison',
-    },
-    water: {
-      src: '/images/iconesTypes/water.svg',
-      colorBackground: '#14A8FF',
-      text: 'Water',
-    },
-    normal: {
-      src: '/images/iconesTypes/normal.svg',
-      colorBackground: 'rgb(202, 202, 202)',
-      text: 'Normal',
-    },
-    ground: {
-      src: '/images/iconesTypes/ground.svg',
-      text: 'Ground',
-      colorBackground: 'rgb(83, 64, 38)',
-    },
-    rock: {
-      src: '/images/iconesTypes/rock.svg',
-      text: 'Rock',
-      colorBackground: '#a38c21',
-    },
-    ghost: {
-      src: '/images/iconesTypes/ghost.svg',
-      text: 'Ghost',
-      colorBackground: '#7b62a3',
-    },
-    psychic: {
-      src: '/images/iconesTypes/psychic.svg',
-      text: 'Psychic',
-      colorBackground: '#f366b9',
-    },
-    fighting: {
-      src: '/images/iconesTypes/fighting.svg',
-      text: 'Fighting',
-      colorBackground: '#d56723',
-    },
-    ice: {
-      src: '/images/iconesTypes/ice.svg',
-      text: 'Ice',
-      colorBackground: '#51c4e7',
-    },
-    steel: {
-      src: '/images/iconesTypes/steel.svg',
-      text: 'Steel',
-      colorBackground: '#9eb7b8',
-    },
-  };
+  const types = useMemo(() => {
+    return {
+      fire: {
+        src: '/images/iconesTypes/fire.svg',
+        colorBackground: '#FF9900',
+        text: 'Fire',
+      },
+      flying: {
+        src: '/images/iconesTypes/flying.svg',
+        colorBackground: '#89BDFF',
+        text: 'Flying',
+      },
+      bug: {
+        src: '/images/iconesTypes/bug.svg',
+        colorBackground: '#7BCF00',
+        text: 'Bug',
+      },
+      dark: {
+        src: '/images/iconesTypes/dark.svg',
+        colorBackground: '#5A566A',
+        text: 'Dark',
+      },
+      dragon: {
+        src: '/images/iconesTypes/dragon.svg',
+        colorBackground: '#0076FF',
+        text: 'Dragon',
+      },
+      electric: {
+        src: '/images/iconesTypes/electric.svg',
+        colorBackground: '#FFDE00',
+        text: 'Electric',
+      },
+      grass: {
+        src: '/images/iconesTypes/grass.svg',
+        colorBackground: '#1CD80E',
+        text: 'Grass',
+      },
+      poison: {
+        src: '/images/iconesTypes/poison.svg',
+        colorBackground: '#F149FF',
+        text: 'Poison',
+      },
+      water: {
+        src: '/images/iconesTypes/water.svg',
+        colorBackground: '#14A8FF',
+        text: 'Water',
+      },
+      normal: {
+        src: '/images/iconesTypes/normal.svg',
+        colorBackground: 'rgb(202, 202, 202)',
+        text: 'Normal',
+      },
+      ground: {
+        src: '/images/iconesTypes/ground.svg',
+        text: 'Ground',
+        colorBackground: 'rgb(83, 64, 38)',
+      },
+      rock: {
+        src: '/images/iconesTypes/rock.svg',
+        text: 'Rock',
+        colorBackground: '#a38c21',
+      },
+      ghost: {
+        src: '/images/iconesTypes/ghost.svg',
+        text: 'Ghost',
+        colorBackground: '#7b62a3',
+      },
+      psychic: {
+        src: '/images/iconesTypes/psychic.svg',
+        text: 'Psychic',
+        colorBackground: '#f366b9',
+      },
+      fighting: {
+        src: '/images/iconesTypes/fighting.svg',
+        text: 'Fighting',
+        colorBackground: '#d56723',
+      },
+      ice: {
+        src: '/images/iconesTypes/ice.svg',
+        text: 'Ice',
+        colorBackground: '#51c4e7',
+      },
+      steel: {
+        src: '/images/iconesTypes/steel.svg',
+        text: 'Steel',
+        colorBackground: '#9eb7b8',
+      },
+    };
+  }, []);
 
   const options = [
     {
@@ -220,68 +223,61 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
     },
   ];
 
-  const initialCustomStyles = {
-    control: (provided) => ({
-      ...provided,
-      backgroundColor: 'transparent',
-      border: '2px solid #2f5aff',
-      outline: 'none',
-      boxShadow: 'none',
-      borderRadius: '5px 0px 0px 5px',
-      '&:hover': {
-        backgroundColor: 'transparent',
-        outline: 'none',
-        boxShadow: 'none',
-        padding: 'none !important',
-      },
-      '&:focus': {
-        backgroundColor: 'transparent',
-        outline: 'none',
-        boxShadow: 'none',
-        padding: 'none !important',
-      },
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: types[state.value]?.colorBackground || 'white', //
-      color: 'white',
-    }),
-    multiValue: (provided, state) => ({
-      ...provided,
-      backgroundColor: types[state.data.value]?.colorBackground || 'white', //
-      color: 'white',
-    }),
-    multiValueLabel: (provided, state) => ({
-      ...provided,
-      color: 'white',
-    }),
-    multiValueRemove: (provided, state) => ({
-      ...provided,
-      color: 'white',
-    }),
-    menuPortal: (base) => ({
-      ...base,
-      zIndex: 30,
-    }),
-  };
-
   function onClickButton(event) {
     event.preventDefault();
     if (maxFilterExcedido === false && isFilter === true) {
       SetRenderPokemonsFilter(optionsFilter);
     }
   }
-  const [customStyles, setCustomStyles] = React.useState(initialCustomStyles);
 
   React.useEffect(() => {
     if (typeof document !== 'undefined') {
-      const updatedStyles = {
-        ...customStyles,
-        menuPortalTarget: document.body,
-      };
-      setCustomStyles((prevStyles) => ({ ...prevStyles, ...updatedStyles }));
+      setCustomStyles({
+        control: (provided) => ({
+          ...provided,
+          backgroundColor: 'transparent',
+          border: '2px solid #2f5aff',
+          outline: 'none',
+          boxShadow: 'none',
+          borderRadius: '5px 0px 0px 5px',
+          '&:hover': {
+            backgroundColor: 'transparent',
+            outline: 'none',
+            boxShadow: 'none',
+            padding: 'none !important',
+          },
+          '&:focus': {
+            backgroundColor: 'transparent',
+            outline: 'none',
+            boxShadow: 'none',
+            padding: 'none !important',
+          },
+        }),
+        option: (provided, state) => ({
+          ...provided,
+          backgroundColor: types[state.value]?.colorBackground || 'white',
+          color: 'white',
+        }),
+        multiValue: (provided, state) => ({
+          ...provided,
+          backgroundColor: types[state.data.value]?.colorBackground || 'white', //
+          color: 'white',
+        }),
+        multiValueLabel: (provided, state) => ({
+          ...provided,
+          color: 'white',
+        }),
+        multiValueRemove: (provided, state) => ({
+          ...provided,
+          color: 'white',
+        }),
+        menuPortal: (base) => ({
+          ...base,
+          zIndex: 30,
+        }),
+      });
     }
-  }, [customStyles]);
+  }, [types]);
 
   return (
     <div className={styles.filterTypes}>
@@ -289,7 +285,9 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
       <div className={styles.swiperContainer}>
         <div>
           <Select
-            menuPortalTarget={document.body}
+            menuPortalTarget={
+              typeof document !== 'undefined' ? document.body : null
+            }
             className={styles.select}
             components={animetedComponents}
             isMulti
