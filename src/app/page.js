@@ -7,11 +7,11 @@ import React from 'react';
 const page = () => {
   return (
     <>
-      {/* <BackgroundOrange>
+      <BackgroundOrange>
         <PokemonHome />
-      </BackgroundOrange> */}
+      </BackgroundOrange>
       <PokemonSelect />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
