@@ -1,6 +1,8 @@
 .filterTypes {
   display: flex;
   flex-direction: column;
+  overflow-x: auto;
+  max-width: 100%;
   width: 440px;
   height: 32px;
   align-items: left;
@@ -11,22 +13,22 @@
 .filterTypes h2 {
   margin-bottom: 16px;
   font-family: Montserrat;
-font-size: 24px;
-font-weight: 700;
-line-height: 32px;
-letter-spacing: 0em;
-color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  color: #FFFFFF;
 }
 
 .buttonType {
   width: 91px;
-padding: 4px 8px 4px 8px;
-border-radius: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-border: none;
-cursor: initial;
+  padding: 4px 8px 4px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: initial;
 }
 
 .buttonType p {
@@ -44,16 +46,16 @@ cursor: initial;
 
 .swiperContainer button {
   display: block;
-outline: none;
-border: none;
-max-width: 100%;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-border-radius: 0px 8px 8px 0px;
-background: #2F5AFF;
-width: 56px;
+  outline: none;
+  border: none;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 0px 8px 8px 0px;
+  background: #2F5AFF;
+  width: 56px;
 }
 
 .FilterExcedido {
@@ -84,8 +86,9 @@ width: 56px;
   .swiperContainer {
     justify-content: center;
     text-align: center;
-   }
-   .filterTypes h2 {
-     text-align: center;
-   }
   }
+
+  .filterTypes h2 {
+    text-align: center;
+  }
+}
