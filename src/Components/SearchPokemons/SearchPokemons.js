@@ -55,7 +55,7 @@ const SearchPokemons = ({
 
   return (
     <>
-      {/* <div className={styles.buttonScroll}>
+      <div className={styles.buttonScroll}>
         <Link href="#header">
           <Image
             src="/images/icon-home.svg"
@@ -65,7 +65,7 @@ const SearchPokemons = ({
           />
           <p>Início</p>
         </Link>
-      </div> */}
+      </div>
       <div className={styles.containerSearchBar}>
         {details && data && (
           <PokemonDetails
