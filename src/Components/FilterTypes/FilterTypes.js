@@ -40,7 +40,7 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
 
   const animetedComponents = makeAnimated();
 
-  const types = useMemo(() => {
+  const types = React.useMemo(() => {
     return {
       fire: {
         src: '/images/iconesTypes/fire.svg',
