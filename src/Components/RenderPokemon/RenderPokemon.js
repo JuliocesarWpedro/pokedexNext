@@ -21,29 +21,29 @@ const RenderPokemon = ({
   const [totalPages, setTotalPages] = React.useState(0);
   const [offSet, setOffset] = React.useState(0);
 
-  async function Filterpokemons() {
-    if (isFilterPokemon.length === 1) {
-      setLoading(true);
-      const url = `https://pokeapi.co/api/v2/type/${isFilterPokemon[0]}/`;
-      const response = await fetch(url);
-      const json = await response.json();
-      if (json) {
-        setPokemonsFilter(json.pokemon);
-        setLoading(false);
-      }
-    } else if (isFilterPokemon.length === 2) {
-      setLoading(true);
-      const url = `https://pokeapi.co/api/v2/type/${isFilterPokemon[0]}/`;
-      const response = await fetch(url);
-      const json = await response.json();
-      if (json) {
-        setPokemonsFilter(json.pokemon);
-        setLoading(false);
-      }
-    }
-  }
-
   React.useEffect(() => {
+    const Filterpokemons = async () => {
+      if (isFilterPokemon.length === 1) {
+        setLoading(true);
+        const url = `https://pokeapi.co/api/v2/type/${isFilterPokemon[0]}/`;
+        const response = await fetch(url);
+        const json = await response.json();
+        if (json) {
+          setPokemonsFilter(json.pokemon);
+          setLoading(false);
+        }
+      } else if (isFilterPokemon.length === 2) {
+        setLoading(true);
+        const url = `https://pokeapi.co/api/v2/type/${isFilterPokemon[0]}/`;
+        const response = await fetch(url);
+        const json = await response.json();
+        if (json) {
+          setPokemonsFilter(json.pokemon);
+          setLoading(false);
+        }
+      }
+    };
+
     if (isFilterPokemon.length === 0) {
       setisFilter(false);
       setIsHaveFilter(false);
@@ -81,27 +81,27 @@ const RenderPokemon = ({
     }
   }
 
-  async function fetchPokemons() {
-    try {
-      setLoading(true);
-      let url = `https://pokeapi.co/api/v2/pokemon?limit=${30}&offset=${offSet}`;
-      const response = await fetch(url);
-      const json = await response.json();
-      setTotalPages(Math.ceil(json.count / 30));
-      setPokemons(json.results);
-    } catch (error) {
-      console.log('error', error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   useEffect(() => {
+    const fetchPokemons = async () => {
+      try {
+        setLoading(true);
+        let url = `https://pokeapi.co/api/v2/pokemon?limit=${30}&offset=${offSet}`;
+        const response = await fetch(url);
+        const json = await response.json();
+        setTotalPages(Math.ceil(json.count / 30));
+        setPokemons(json.results);
+      } catch (error) {
+        console.log('error', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     setLoading(true);
     fetchPokemons().finally(() => {
       setLoading(false);
     });
-  }, [pages]);
+  }, [pages, offSet]);
 
   return (
     <div onClick={handleClick} className={styles.renderPokemonsGrid}>

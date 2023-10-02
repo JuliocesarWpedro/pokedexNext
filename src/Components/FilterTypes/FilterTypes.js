@@ -220,7 +220,7 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
     },
   ];
 
-  const customStyles = {
+  const initialCustomStyles = {
     control: (provided) => ({
       ...provided,
       backgroundColor: 'transparent',
@@ -271,6 +271,17 @@ const FilterTypes = ({ setIsFilterPokemon, setIsHaveFilter }) => {
       SetRenderPokemonsFilter(optionsFilter);
     }
   }
+  const [customStyles, setCustomStyles] = React.useState(initialCustomStyles);
+
+  React.useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const updatedStyles = {
+        ...customStyles,
+        menuPortalTarget: document.body,
+      };
+      setCustomStyles((prevStyles) => ({ ...prevStyles, ...updatedStyles }));
+    }
+  }, [customStyles]);
 
   return (
     <div className={styles.filterTypes}>
